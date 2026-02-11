@@ -29,7 +29,7 @@
       "npm": "@ai-sdk/openai-compatible",
       "name": "QCAPI",
       "options": {
-        "baseURL": "https://API地址/v1"
+        "baseURL": "https://APIURL/v1"
       },
       "models": {
         "glm-5-openrouter": {
@@ -39,7 +39,7 @@
           "last_updated": "2026-02-11",
           "attachment": false,
           "reasoning": true,
-          "structured_output": false,
+          "structured_output": true,
           "temperature": true,
           "tool_call": true,
           "open_weights": true,

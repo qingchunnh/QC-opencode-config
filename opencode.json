@@ -32,11 +32,11 @@
         "baseURL": "https://API地址/v1"
       },
       "models": {
-        "glm-4.7-openrouter": {
-          "name": "GLM-4.7-openrouter",
+        "glm-5-openrouter": {
+          "name": "GLM-5",
             "limit": {
             "context": 200000,
-            "output": 131000
+            "output": 130000
           }
         },
           "kimi-k2.5": {

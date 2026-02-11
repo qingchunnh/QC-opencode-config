@@ -33,7 +33,7 @@
       },
       "models": {
         "glm-5-openrouter": {
-          "name": "GLM-5",
+          "name": "GLM 5",
           "family": "glm",
           "release_date": "2026-02-11",
           "last_updated": "2026-02-11",
@@ -60,7 +60,7 @@
           }
         },
           "kimi-k2.5": {
-          "name": "kimi-k2.5",
+          "name": "Kimi K2.5",
           "family": "kimi",
           "release_date": "2026-01-27",
           "last_updated": "2026-01-27",

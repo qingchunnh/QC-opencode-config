@@ -24,6 +24,11 @@
     "external_directory": "ask",
     "doom_loop": "ask"
   },
+  "agent": {
+    "kimi": {
+      "prompt": "{file:./prompts/kimi.txt}"
+    }
+  },
   "provider": {
     "qcapi": {
       "npm": "@ai-sdk/openai-compatible",

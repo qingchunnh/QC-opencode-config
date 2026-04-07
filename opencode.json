@@ -29,19 +29,20 @@
       "prompt": "{file:./prompts/kimi.txt}"
     }
   },
+  "disabled_providers": ["opencode"],
   "provider": {
     "qcapi": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "QCAPI",
+      "name": "青春 API",
       "options": {
         "baseURL": "https://APIURL/v1"
       },
       "models": {
-        "glm-5-openrouter": {
-          "name": "GLM 5",
+        "glm-5.1-openrouter": {
+          "name": "GLM-5.1",
           "family": "glm",
-          "release_date": "2026-02-11",
-          "last_updated": "2026-02-11",
+          "release_date": "2026-04-07",
+          "last_updated": "2026-04-07",
           "attachment": false,
           "reasoning": true,
           "structured_output": true,
@@ -49,8 +50,35 @@
           "tool_call": true,
           "open_weights": true,
           "limit": {
-            "context": 202800,
-            "output": 131100
+            "context": 200000,
+            "output": 130000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "interleaved": {
+            "field": "reasoning_content"
+          }
+        },
+        "glm-5.1-openrouter-fast": {
+          "name": "GLM-5.1-fast",
+          "family": "glm",
+          "release_date": "2026-04-07",
+          "last_updated": "2026-04-07",
+          "attachment": false,
+          "reasoning": true,
+          "structured_output": true,
+          "temperature": true,
+          "tool_call": true,
+          "open_weights": true,
+          "limit": {
+            "context": 200000,
+            "output": 130000
           },
           "modalities": {
             "input": [
@@ -65,7 +93,7 @@
           }
         },
         "kimi-k2.5": {
-          "name": "Kimi K2.5",
+          "name": "Kimi-K2.5",
           "family": "kimi",
           "release_date": "2026-01-27",
           "last_updated": "2026-01-27",
@@ -77,8 +105,8 @@
           "knowledge": "2025-01",
           "open_weights": true,
           "limit": {
-            "context": 262100,
-            "output": 262100
+            "context": 260000,
+            "output": 260000
           },
           "modalities": {
             "input": [

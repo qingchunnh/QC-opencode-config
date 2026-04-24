@@ -38,6 +38,60 @@
         "baseURL": "https://APIURL/v1"
       },
       "models": {
+          "deepseek-v4-flash": {
+          "name": "DeepSeek-V4-Flash",
+          "family": "deepseek",
+          "release_date": "2026-04-24",
+          "last_updated": "2026-04-24",
+          "attachment": false,
+          "reasoning": true,
+          "temperature": false,
+          "tool_call": true,
+          "knowledge": "2025-05",
+          "open_weights": true,
+          "limit": {
+            "context": 1000000,
+            "output": 384000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "interleaved": {
+            "field": "reasoning_content"
+          }
+        },
+          "deepseek-v4-pro": {
+          "name": "DeepSeek-V4-Pro",
+          "family": "deepseek",
+          "release_date": "2026-04-24",
+          "last_updated": "2026-04-24",
+          "attachment": false,
+          "reasoning": true,
+          "temperature": false,
+          "tool_call": true,
+          "knowledge": "2025-05",
+          "open_weights": true,
+          "limit": {
+            "context": 1000000,
+            "output": 384000
+          },
+          "modalities": {
+            "input": [
+              "text"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "interleaved": {
+            "field": "reasoning_content"
+          }
+        },
         "glm-5.1-openrouter": {
           "name": "GLM-5.1",
           "family": "glm",
@@ -45,9 +99,9 @@
           "last_updated": "2026-04-07",
           "attachment": false,
           "reasoning": true,
-          "structured_output": true,
           "temperature": true,
           "tool_call": true,
+          "structured_output": true,
           "open_weights": true,
           "limit": {
             "context": 200000,
@@ -72,9 +126,9 @@
           "last_updated": "2026-04-07",
           "attachment": false,
           "reasoning": true,
-          "structured_output": true,
           "temperature": true,
           "tool_call": true,
+          "structured_output": true,
           "open_weights": true,
           "limit": {
             "context": 200000,
@@ -92,14 +146,13 @@
             "field": "reasoning_content"
           }
         },
-        "kimi-k2.5": {
-          "name": "Kimi-K2.5",
+        "kimi-k2.6": {
+          "name": "Kimi-K2.6",
           "family": "kimi",
-          "release_date": "2026-01-27",
-          "last_updated": "2026-01-27",
+          "release_date": "2026-04-21",
+          "last_updated": "2026-04-21",
           "attachment": true,
           "reasoning": true,
-          "structured_output": true,
           "temperature": true,
           "tool_call": true,
           "knowledge": "2025-01",

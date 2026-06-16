@@ -92,11 +92,11 @@
             "field": "reasoning_content"
           }
         },
-        "glm-5.1-openrouter": {
-          "name": "GLM-5.1",
+        "glm-5.2": {
+          "name": "GLM-5.2",
           "family": "glm",
-          "release_date": "2026-04-07",
-          "last_updated": "2026-04-07",
+          "release_date": "2026-06-17",
+          "last_updated": "2026-06-17",
           "attachment": false,
           "reasoning": true,
           "temperature": true,
@@ -104,7 +104,7 @@
           "structured_output": true,
           "open_weights": true,
           "limit": {
-            "context": 200000,
+            "context": 1000000,
             "output": 130000
           },
           "modalities": {
@@ -119,38 +119,11 @@
             "field": "reasoning_content"
           }
         },
-        "glm-5.1-openrouter-fast": {
-          "name": "GLM-5.1-fast",
-          "family": "glm",
-          "release_date": "2026-04-07",
-          "last_updated": "2026-04-07",
-          "attachment": false,
-          "reasoning": true,
-          "temperature": true,
-          "tool_call": true,
-          "structured_output": true,
-          "open_weights": true,
-          "limit": {
-            "context": 200000,
-            "output": 130000
-          },
-          "modalities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
-          },
-          "interleaved": {
-            "field": "reasoning_content"
-          }
-        },
-        "kimi-k2.6": {
-          "name": "Kimi-K2.6",
+        "kimi-k2.7-code": {
+          "name": "Kimi-K2.7-Code",
           "family": "kimi",
-          "release_date": "2026-04-21",
-          "last_updated": "2026-04-21",
+          "release_date": "2026-06-12",
+          "last_updated": "2026-06-12",
           "attachment": true,
           "reasoning": true,
           "temperature": true,

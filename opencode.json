@@ -11,6 +11,7 @@
     "list": "allow",
     "bash": {
       "*": "ask",
+      "git *": "ask",
       "rm *": "deny"
     },
     "task": "ask",

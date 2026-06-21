@@ -114,6 +114,7 @@ EOF
 - Imperative mood: "fix bug" not "fixes bug"
 - Reference issues: `Closes #123`, `Refs #456`
 - Keep description under 72 characters
+- Use English for commit messages by default, unless the user specifies the commit message language
 
 ## Git Safety Protocol
 

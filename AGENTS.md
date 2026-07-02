@@ -6,6 +6,40 @@
 默认添加代码注释，除非用户明确要求不添加
 代码注释格式默认遵循当前工作目录的现有代码库(包括新建文件)，若当前工作目录为全新项目(非基于现有代码库)则默认添加规范的代码注释
 
+# Git commit specification
+Git 提交规范默认遵循当前工作目录中已有的提交历史风格，若当前工作目录无提交历史则严格遵循以下规范
+
+## Commit Format
+```
+<type>: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+## Commit Types
+| Type       | Purpose                        |
+| ---------- | ------------------------------ |
+| `feat`     | New feature                    |
+| `fix`      | Bug fix                        |
+| `docs`     | Documentation only             |
+| `style`    | Formatting/style (no logic)    |
+| `refactor` | Code refactor (no feature/fix) |
+| `perf`     | Performance improvement        |
+| `test`     | Add/update tests               |
+| `build`    | Build system/dependencies      |
+| `ci`       | CI/config changes              |
+| `chore`    | Maintenance/misc               |
+| `revert`   | Revert commit                  |
+
+## Generate Commit Message
+
+Analyze the diff to determine:
+
+- **Type**: What kind of change is this?
+- **Description**: One-line summary of what changed (present tense, imperative mood, <72 chars)
+
 # Tool Use Reminder
 `glob` 和 `grep` 工具底层使用 `ripgrep`，默认情况下以 `.` 开头的隐藏目录以及 `.gitignore` 文件中列出的文件和目录都不会被遍历，也不会出现在搜索和列表结果中。
 除非当前工作目录下包含 `.ignore` 文件并列出

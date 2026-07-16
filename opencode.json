@@ -125,8 +125,8 @@
         "kimi-k3": {
           "name": "Kimi-K3",
           "family": "kimi",
-          "release_date": "2026-07-17",
-          "last_updated": "2026-07-17",
+          "release_date": "2026-07-16",
+          "last_updated": "2026-07-16",
           "attachment": true,
           "reasoning": true,
           "temperature": true,
@@ -136,7 +136,7 @@
           "open_weights": true,
           "limit": {
             "context": 1000000,
-            "output": 260000
+            "output": 1000000
           },
           "modalities": {
             "input": [

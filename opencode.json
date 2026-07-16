@@ -27,6 +27,9 @@
     "doom_loop": "ask"
   },
   "agent": {
+    "title": {
+      "model": "qcapi/deepseek-v4-flash"
+    },
     "kimi": {
       "mode": "primary",
       "prompt": "{file:./prompts/kimi.txt}"

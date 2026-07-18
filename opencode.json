@@ -70,6 +70,11 @@
           },
           "interleaved": {
             "field": "reasoning_content"
+          },
+          "cost": {
+            "input": 2,
+            "output": 4,
+            "cache_read": 0.04
           }
         },
           "deepseek-v4-pro": {
@@ -98,6 +103,11 @@
           },
           "interleaved": {
             "field": "reasoning_content"
+          },
+          "cost": {
+            "input": 6,
+            "output": 12,
+            "cache_read": 0.05
           }
         },
         "glm-5.2": {
@@ -125,6 +135,11 @@
           },
           "interleaved": {
             "field": "reasoning_content"
+          },
+          "cost": {
+            "input": 9.8,
+            "output": 30.8,
+            "cache_read": 1.82
           }
         },
         "kimi-k3": {
@@ -154,6 +169,11 @@
           },
           "interleaved": {
             "field": "reasoning_content"
+          },
+          "cost": {
+            "input": 21,
+            "output": 105,
+            "cache_read": 2.1
           }
         }
       }

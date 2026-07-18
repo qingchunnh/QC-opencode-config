@@ -61,12 +61,8 @@
             "output": 384000
           },
           "modalities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
+            "input": ["text"],
+            "output": ["text"]
           },
           "interleaved": {
             "field": "reasoning_content"
@@ -94,12 +90,8 @@
             "output": 384000
           },
           "modalities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
+            "input": ["text"],
+            "output": ["text"]
           },
           "interleaved": {
             "field": "reasoning_content"
@@ -126,12 +118,8 @@
             "output": 130000
           },
           "modalities": {
-            "input": [
-              "text"
-            ],
-            "output": [
-              "text"
-            ]
+            "input": ["text"],
+            "output": ["text"]
           },
           "interleaved": {
             "field": "reasoning_content"
@@ -158,14 +146,8 @@
             "output": 1000000
           },
           "modalities": {
-            "input": [
-              "text",
-              "image",
-              "video"
-            ],
-            "output": [
-              "text"
-            ]
+            "input": ["text", "image", "video"],
+            "output": ["text"]
           },
           "interleaved": {
             "field": "reasoning_content"

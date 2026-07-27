@@ -13,7 +13,8 @@
     "bash": {
       "*": "ask",
       "git *": "ask",
-      "rm *": "deny"
+      "rm *": "deny",
+      "mv *": "deny"
     },
     "task": "ask",
     "skill": "ask",

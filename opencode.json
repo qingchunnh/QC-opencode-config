@@ -17,6 +17,8 @@
       "git reset *": "deny",
       "git clean": "deny",
       "git clean *": "deny",
+      "git rm": "deny",
+      "git rm *": "deny",
       "sudo": "deny",
       "sudo *": "deny",
       "rm": "deny",

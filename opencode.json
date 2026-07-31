@@ -68,8 +68,8 @@
           "deepseek-v4-flash": {
           "name": "DeepSeek-V4-Flash",
           "family": "deepseek-v4",
-          "release_date": "2026-07-20",
-          "last_updated": "2026-07-20",
+          "release_date": "2026-07-31",
+          "last_updated": "2026-07-31",
           "attachment": false,
           "reasoning": true,
           "temperature": false,
@@ -97,8 +97,8 @@
           "deepseek-v4-pro": {
           "name": "DeepSeek-V4-Pro",
           "family": "deepseek-v4",
-          "release_date": "2026-07-20",
-          "last_updated": "2026-07-20",
+          "release_date": "2026-08-10",
+          "last_updated": "2026-08-10",
           "attachment": false,
           "reasoning": true,
           "temperature": false,

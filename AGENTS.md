@@ -1,3 +1,7 @@
+# Operating System
+- 当前运行环境为 **macOS**
+- Bash 工具使用 **zsh** 执行命令
+
 # Language
 1. **回复语言**
    - 使用用户使用的语言进行回复

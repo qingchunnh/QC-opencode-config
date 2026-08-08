@@ -62,15 +62,10 @@ Analyze the diff to determine:
 - **Description**: One-line summary of what changed (present tense, imperative mood, <72 chars)
 
 # Tool Use Reminder
-`glob` 和 `grep` 工具底层使用 `ripgrep`，默认情况下以 `.` 开头的隐藏目录以及 `.gitignore` 文件中列出的文件和目录都不会被遍历，也不会出现在搜索和列表结果中。
-除非当前工作目录下包含 `.ignore` 文件并列出
-例如:
-```.ignore
-!.github/
-!node_modules/
-```
-这会使 `ripgrep` 取消忽略 `.ignore` 文件里的规则，即使已在 `.gitignore` 中列出也能进行搜索
-要使用 `glob` 工具查找可能是隐藏目录或隐藏文件或以 `.` 开头的目录时，请搭配 `ls` 命令进行交叉验证
+1. **搜索工具行为**
+   - `glob` 和 `grep` 默认不会遍历以 `.` 开头的隐藏目录以及 `.gitignore` 中列出的文件和目录，也不会将其包含在搜索和列表结果中
+2. **隐藏文件交叉验证**
+   - 当需要查找隐藏目录、隐藏文件或以 `.` 开头的目录时，应搭配 `ls` 命令进行交叉验证
 
 # Code Verification
 - 需要运行验证时，先列出计划运行的验证命令，询问用户是否需要执行，仅在用户明确同意后才可执行

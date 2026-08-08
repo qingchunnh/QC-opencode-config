@@ -1,6 +1,6 @@
 ---
 name: git-commit
-description: 'Execute git commit with conventional commit message analysis, intelligent staging, and message generation. Use when user asks to commit changes, create a git commit, or mentions "/commit". Supports: (1) Auto-detecting type and scope from changes, (2) Generating conventional commit messages from diff, (3) Interactive commit with optional type/scope/description overrides, (4) Intelligent file staging for logical grouping'
+description: 'Execute git commit with conventional commit message analysis, intelligent staging, and message generation. Use when user asks to commit changes, create a git commit, or mentions "/commit". Supports: (1) Auto-detecting type from changes, (2) Generating conventional commit messages from diff, (3) Interactive commit with optional type/description overrides, (4) Intelligent file staging for logical grouping'
 license: MIT
 allowed-tools: Bash
 ---
@@ -9,17 +9,18 @@ allowed-tools: Bash
 
 ## Overview
 
-Create standardized, semantic git commits using the Conventional Commits specification. Analyze the actual diff to determine appropriate type, scope, and message.
+Create standardized, semantic git commits using the Conventional Commits specification. Analyze the actual diff to determine appropriate type, and message.
 
 ## Conventional Commit Format
 
 ```
-<type>[optional scope]: <description>
+<type>: <description>
 
 [optional body]
 
 [optional footer(s)]
 ```
+**Do not use scope**
 
 ## Commit Types
 
@@ -40,7 +41,7 @@ Create standardized, semantic git commits using the Conventional Commits specifi
 ## Breaking Changes
 
 ```
-# Exclamation mark after type/scope
+# Exclamation mark after type
 feat!: remove deprecated endpoint
 
 # BREAKING CHANGE footer
@@ -87,18 +88,17 @@ git add -p
 Analyze the diff to determine:
 
 - **Type**: What kind of change is this?
-- **Scope**: What area/module is affected?
 - **Description**: One-line summary of what changed (present tense, imperative mood, <72 chars)
 
 ### 4. Execute Commit
 
 ```bash
 # Single line
-git commit -m "<type>[scope]: <description>"
+git commit -m "<type>: <description>"
 
 # Multi-line with body/footer
 git commit -m "$(cat <<'EOF'
-<type>[scope]: <description>
+<type>: <description>
 
 <optional body>
 

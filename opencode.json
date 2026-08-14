@@ -127,11 +127,11 @@
             "cache_read": 0.05
           }
         },
-        "glm-5.2": {
-          "name": "GLM-5.2",
+        "glm-5.3": {
+          "name": "GLM-5.3",
           "family": "glm-5",
-          "release_date": "2026-06-13",
-          "last_updated": "2026-06-13",
+          "release_date": "2026-08-14",
+          "last_updated": "2026-08-14",
           "attachment": false,
           "reasoning": true,
           "temperature": true,
@@ -181,6 +181,34 @@
             "input": 21,
             "output": 105,
             "cache_read": 2.1
+          }
+        },
+        "qwen3.8-2.4t-a95b": {
+          "name": "Qwen3.8-2.4T-A95B",
+          "family": "qwen3.8",
+          "release_date": "2026-08-12",
+          "last_updated": "2026-08-12",
+          "attachment": true,
+          "reasoning": true,
+          "temperature": false,
+          "tool_call": true,
+          "structured_output": true,
+          "open_weights": true,
+          "limit": {
+            "context": 260000,
+            "output": 130000
+          },
+          "modalities": {
+            "input": ["text"],
+            "output": ["text"]
+          },
+          "interleaved": {
+            "field": "reasoning_content"
+          },
+          "cost": {
+            "input": 14,
+            "output": 42,
+            "cache_read": 1.75
           }
         }
       }

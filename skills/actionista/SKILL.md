@@ -1,6 +1,6 @@
 ---
 description: >-
-  Creates, debugs, and optimizes GitHub Actions workflow YAML files. Recommends current action versions with SHA pinning from a daily-updated index of 260+ actions. Configures matrix builds, dependency caching, reusable workflows, OIDC authentication, secrets management, and runner selection. Includes a workflow-analyzer agent for reviewing existing workflows. Use when the user asks about GitHub Actions, workflows, CI/CD, .github/workflows, any action by name (actions/checkout, setup-node, setup-python, etc.), or workflow analysis.
+  Creates, debugs, and optimizes GitHub Actions workflow YAML files. Recommends current action versions with SHA pinning from an index of 260+ actions. Configures matrix builds, dependency caching, reusable workflows, OIDC authentication, secrets management, and runner selection. Includes a workflow-analyzer agent for reviewing existing workflows. Use when the user asks about GitHub Actions, workflows, CI/CD, .github/workflows, any action by name (actions/checkout, setup-node, setup-python, etc.), or workflow analysis.
 license: MIT
 metadata:
   repository: https://github.com/claylo/actionista
@@ -41,7 +41,7 @@ If either tool is missing, suggest the user install them:
 
 ### Action Versions
 
-Consult `actions-index.json` in this skill directory for current versions of 264 popular actions. The index is updated daily and organized by category.
+Consult `actions-index.json` in this skill directory for current versions of 264 popular actions.
 
 **Do not read the entire file.** Use `jq` to query only what you need.
 
@@ -275,5 +275,5 @@ All reference files are in `references/`:
 
 Working templates in `examples/`: `ci-node.yaml`, `ci-rust.yaml`, `deploy-aws.yaml`, `release-please.yaml`
 
-- **`actions-index.json`** — Current versions of 260+ popular actions (updated daily)
+- **`actions-index.json`** — Current versions of 260+ popular actions
 - **`tracked-actions.yaml`** — List of tracked actions by category

@@ -1,0 +1,349 @@
+# Tracked GitHub Actions
+# This file defines which actions are tracked in actions-index.json
+# Categories help organize and discover actions
+# Updated by .github/workflows/update-index.yml
+
+categories:
+  core:
+    description: Official GitHub Actions for core functionality
+    actions:
+      - actions/checkout
+      - actions/cache
+      - actions/upload-artifact
+      - actions/download-artifact
+      - actions/github-script
+      - actions/stale
+      - actions/labeler
+      - actions/dependency-review-action
+      - actions/create-github-app-token
+      - actions/attest-build-provenance
+      - actions/add-to-project
+      - actions/ai-inference
+
+  setup-languages:
+    description: Language and runtime setup actions
+    actions:
+      - actions/setup-node
+      - actions/setup-python
+      - actions/setup-go
+      - actions/setup-java
+      - actions/setup-dotnet
+      - ruby/setup-ruby
+      - dtolnay/rust-toolchain
+      - actions-rust-lang/setup-rust-toolchain
+      - erlef/setup-beam
+      - swift-actions/setup-swift
+      - julia-actions/setup-julia
+      - ocaml/setup-ocaml
+      - haskell-actions/setup
+      - graalvm/setup-graalvm
+      - shivammathur/setup-php
+      - oven-sh/setup-bun
+      - denoland/setup-deno
+      - volta-cli/action
+      - astral-sh/setup-uv
+      - maxim-lobanov/setup-xcode
+      - aminya/setup-cpp
+      - DeLaGuardo/setup-clojure
+      - coursier/setup-action
+      - sbt/setup-sbt
+      - fwilhe2/setup-kotlin
+      - microsoft/setup-msbuild
+      - subosito/flutter-action
+
+  package-managers:
+    description: Package manager setup and dependency caching
+    actions:
+      - pnpm/action-setup
+      - bahmutov/npm-install
+      - Swatinem/rust-cache
+      - php-actions/composer
+      - ramsey/composer-install
+      - snok/install-poetry
+      - conda-incubator/setup-miniconda
+      - pdm-project/setup-pdm
+      - NuGet/setup-nuget
+      - awalsh128/cache-apt-pkgs-action
+      - cachix/cachix-action
+
+  build-tools:
+    description: Build systems, compilation caching, and cross-compilation
+    actions:
+      - gradle/actions/setup-gradle
+      - s4u/setup-maven-action
+      - lukka/get-cmake
+      - lukka/run-cmake
+      - lukka/run-vcpkg
+      - conan-io/setup-conan
+      - hendrikmuhs/ccache-action
+      - Mozilla-Actions/sccache-action
+      - houseabsolute/actions-rust-cross
+      - cargo-bins/cargo-binstall
+      - taiki-e/install-action
+      - pypa/cibuildwheel
+      - hynek/build-and-inspect-python-package
+      - PyO3/maturin-action
+      - bnjbvr/cargo-machete
+      - Nuitka/Nuitka-Action
+
+  docker:
+    description: Docker and container actions
+    actions:
+      - docker/setup-buildx-action
+      - docker/setup-qemu-action
+      - docker/build-push-action
+      - docker/login-action
+      - docker/metadata-action
+      - docker/bake-action
+      - ko-build/setup-ko
+      - whoan/docker-build-with-cache-action
+      - snok/container-retention-policy
+      - unikraft/kraftkit
+
+  cloud-aws:
+    description: AWS service integrations
+    actions:
+      - aws-actions/configure-aws-credentials
+      - aws-actions/amazon-ecr-login
+      - aws-actions/amazon-ecs-deploy-task-definition
+      - aws-actions/amazon-ecs-render-task-definition
+      - aws-actions/aws-cloudformation-github-deploy
+      - aws-actions/aws-secretsmanager-get-secrets
+      - aws-actions/aws-codebuild-run-build
+      - aws-actions/aws-lambda-deploy
+
+  cloud-gcp:
+    description: Google Cloud Platform integrations
+    actions:
+      - google-github-actions/auth
+      - google-github-actions/setup-gcloud
+      - google-github-actions/deploy-cloudrun
+      - google-github-actions/upload-cloud-storage
+      - google-github-actions/get-secretmanager-secrets
+      - google-github-actions/deploy-cloud-functions
+      - google-github-actions/get-gke-credentials
+      - FirebaseExtended/action-hosting-deploy
+      - w9jds/firebase-action
+
+  cloud-azure:
+    description: Microsoft Azure integrations
+    actions:
+      - azure/login
+      - azure/webapps-deploy
+      - azure/docker-login
+      - azure/functions-action
+      - azure/cli
+
+  kubernetes:
+    description: Kubernetes deployment and management
+    actions:
+      - azure/k8s-deploy
+      - azure/aks-set-context
+      - helm/kind-action
+      - helm/chart-releaser-action
+
+  security:
+    description: Security scanning, vulnerability detection, and supply chain
+    actions:
+      - github/codeql-action/init
+      - github/codeql-action/analyze
+      - github/codeql-action/autobuild
+      - snyk/actions/node
+      - snyk/actions/python
+      - snyk/actions/docker
+      - aquasecurity/trivy-action
+      - anchore/scan-action
+      - securego/gosec
+      - trufflesecurity/trufflehog
+      - step-security/harden-runner
+      - golang/govulncheck-action
+      - EmbarkStudios/cargo-deny-action
+      - actions-rust-lang/audit
+      - obi1kenobi/cargo-semver-checks-action
+      - pypa/gh-action-pip-audit
+      - dependency-check/Dependency-Check_Action
+      - affaan-m/agentshield
+      - anchore/sbom-action
+      - Trusera/ai-bom
+      - hahwul/authz0
+
+  testing:
+    description: Testing frameworks, coverage, and reporting
+    actions:
+      - codecov/codecov-action
+      - coverallsapp/github-action
+      - cypress-io/github-action
+      - browser-actions/setup-chrome
+      - browser-actions/setup-firefox
+      - mikepenz/action-junit-report
+      - dorny/test-reporter
+      - EnricoMi/publish-unit-test-result-action
+      - irongut/CodeCoverageSummary
+      - davelosert/vitest-coverage-report-action
+      - treosh/lighthouse-ci-action
+      - benchmark-action/github-action-benchmark
+      - php-actions/phpunit
+      - ReactiveCircus/android-emulator-runner
+      - LinuxSuRen/api-testing
+      - bencherdev/bencher
+
+  linting:
+    description: Code quality, linting, and static analysis
+    actions:
+      - super-linter/super-linter
+      - oxsecurity/megalinter
+      - reviewdog/action-eslint
+      - reviewdog/action-golangci-lint
+      - reviewdog/action-shellcheck
+      - reviewdog/action-rubocop
+      - reviewdog/action-brakeman
+      - ludeeus/action-shellcheck
+      - amannn/action-semantic-pull-request
+      - golangci/golangci-lint-action
+      - astral-sh/ruff-action
+      - pre-commit/action
+      - biomejs/setup-biome
+      - cpp-linter/cpp-linter-action
+      - SonarSource/sonarqube-scan-action
+      - JetBrains/qodana-action
+      - php-actions/phpstan
+      - psalm/psalm-github-actions
+      - OskarStark/php-cs-fixer-ga
+      - norio-nomura/action-swiftlint
+      - jakebailey/pyright-action
+      - overtrue/phplint
+      - check-spelling/check-spelling
+      - autofix-ci/action
+      - siderolabs/conform
+      - preactjs/compressed-size-action
+
+  release:
+    description: Release automation and package publishing
+    actions:
+      - googleapis/release-please-action
+      - changesets/action
+      - goreleaser/goreleaser-action
+      - softprops/action-gh-release
+      - ncipollo/release-action
+      - release-drafter/release-drafter
+      - cycjimmy/semantic-release-action
+      - taiki-e/upload-rust-binary-action
+      - taiki-e/create-gh-release-action
+      - release-plz/action
+      - jreleaser/release-action
+      - wangyoucao577/go-release-action
+      - JS-DevTools/npm-publish
+      - pypa/gh-action-pypi-publish
+      - rubygems/release-gem
+      - tauri-apps/tauri-action
+      - Songmu/tagpr
+      - TriPSs/conventional-changelog-action
+      - bcoe/conventional-release-labels
+      - phips28/gh-action-bump-version
+      - marvinpinto/action-automatic-releases
+
+  notifications:
+    description: Notification and messaging
+    actions:
+      - slackapi/slack-github-action
+      - appleboy/telegram-action
+      - dawidd6/action-send-mail
+      - peter-evans/create-or-update-comment
+      - Ilshidur/action-discord
+      - sarisia/actions-status-discord
+      - 8398a7/action-slack
+      - mshick/add-pr-comment
+      - thollander/actions-comment-pull-request
+
+  git-operations:
+    description: Git and GitHub operations
+    actions:
+      - peter-evans/create-pull-request
+      - stefanzweifel/git-auto-commit-action
+      - ad-m/github-push-action
+      - EndBug/add-and-commit
+      - dorny/paths-filter
+      - tj-actions/changed-files
+      - cirrus-actions/rebase
+      - kentaro-m/auto-assign-action
+      - AndreasAugustin/actions-template-sync
+      - contributor-assistant/github-action
+      - JasonEtco/create-an-issue
+      - robvanderleek/create-issue-branch
+      - tj-actions/branch-names
+
+  infrastructure:
+    description: Infrastructure as Code and deployment platforms
+    actions:
+      - hashicorp/setup-terraform
+      - pulumi/actions
+      - bridgecrewio/checkov-action
+      - cloudflare/wrangler-action
+      - amondnet/vercel-action
+      - withastro/action
+      - appleboy/ssh-action
+      - cloudflare/pages-action
+      - einaregilsson/beanstalk-deploy
+      - tailscale/github-action
+      - SpicyPizza/create-envfile
+      - github/branch-deploy
+
+  mobile:
+    description: Mobile and desktop app development
+    actions:
+      - maierj/fastlane-action
+      - expo/expo-github-action
+      - Apple-Actions/import-codesign-certs
+      - Apple-Actions/upload-testflight-build
+      - Apple-Actions/download-provisioning-profiles
+      - kishikawakatsumi/xcresulttool
+      - mxcl/xcodebuild
+      - amirisback/automated-build-android-app-with-github-action
+      - PlasmoHQ/bpp
+
+  documentation:
+    description: Documentation generation and deployment
+    actions:
+      - peaceiris/actions-gh-pages
+      - actions/configure-pages
+      - actions/deploy-pages
+      - actions/upload-pages-artifact
+      - peaceiris/actions-mdbook
+      - JamesIves/github-pages-deploy-action
+      - gautamkrishnar/blog-post-workflow
+
+  ai-assistants:
+    description: AI-powered code review and assistance
+    actions:
+      - anthropics/claude-code-action
+      - anthropics/claude-code-base-action
+      - coderabbitai/ai-pr-reviewer
+      - mattzcarey/shippie
+      - villesau/ai-codereviewer
+      - cirolini/genai-code-review
+      - anc95/ChatGPT-CodeReview
+      - kxxt/chatgpt-action
+      - sturdy-dev/codeball-action
+      - irgolic/AutoPR
+      - grll/claude-code-action
+      - peakoss/anti-slop
+      - github/accessibility-scanner
+
+  utilities:
+    description: General utility actions
+    actions:
+      - mikefarah/yq
+      - hmarr/auto-approve-action
+      - pascalgn/automerge-action
+      - dawidd6/action-download-artifact
+      - mathieudutour/github-tag-action
+      - EndBug/version-check
+      - nrwl/nx-set-shas
+      - styfle/cancel-workflow-action
+      - Kesin11/actions-timeline
+      - getsentry/action-github-app-token
+      - softprops/turnstyle
+      - bakhirev/assayo
+      - bcanseco/github-contribution-graph-action
+      - asyncapi/cli
+      - callmekatootie/carbonate

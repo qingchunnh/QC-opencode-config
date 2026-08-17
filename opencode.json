@@ -93,9 +93,9 @@
             "field": "reasoning_content"
           },
           "cost": {
-            "input": 2,
-            "output": 4,
-            "cache_read": 0.04
+            "input": 3,
+            "output": 9,
+            "cache_read": 0.1
           }
         },
           "deepseek-v4-pro": {
@@ -122,9 +122,9 @@
             "field": "reasoning_content"
           },
           "cost": {
-            "input": 6,
-            "output": 12,
-            "cache_read": 0.05
+            "input": 9,
+            "output": 27,
+            "cache_read": 0.3
           }
         },
         "glm-5.3": {

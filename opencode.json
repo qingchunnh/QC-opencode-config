@@ -183,6 +183,37 @@
             "cache_read": 2.1
           }
         },
+        "k3-256k": {
+          "name": "Kimi-K3-256k",
+          "family": "kimi-k3",
+          "release_date": "2026-07-16",
+          "last_updated": "2026-07-16",
+          "attachment": true,
+          "reasoning": true,
+          "temperature": false,
+          "tool_call": true,
+          "structured_output": true,
+          "open_weights": true,
+          "limit": {
+            "context": 262000,
+            "output": 131000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "interleaved": {
+            "field": "reasoning_content"
+          },
+          "options": {
+            "reasoningEffort": "max"
+          },
+          "cost": {
+            "input": 20,
+            "output": 100,
+            "cache_read": 2
+          }
+        },
         "qwen3.8-2.4t-a95b": {
           "name": "Qwen3.8-2.4T-A95B",
           "family": "qwen3.8",

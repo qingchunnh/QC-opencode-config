@@ -62,6 +62,9 @@ Analyze the diff to determine:
 - **Type**: What kind of change is this?
 - **Description**: One-line summary of what changed (present tense, imperative mood, <72 chars)
 
+# Git Operations
+- 非只读 Git 命令（如 `git add`、`git commit`、`git checkout`、`git push`、`git pull`、`git fetch`、`git merge`、`git rebase`、`git reset`）每次执行前必须先经用户明确同意后才可执行，只读命令可直接执行
+
 # Tool Use Reminder
 1. **搜索工具行为**
    - `glob` 和 `grep` 默认不会遍历以 `.` 开头的隐藏目录以及 `.gitignore` 中列出的文件和目录，也不会将其包含在搜索和列表结果中
@@ -69,7 +72,7 @@ Analyze the diff to determine:
    - 当需要查找隐藏目录、隐藏文件或以 `.` 开头的目录时，应搭配 `ls` 命令进行交叉验证
 
 # Code Verification
-- 需要运行验证时，先列出计划运行的验证命令，询问用户是否需要执行，每次都必须经用户明确同意后才可执行
+- 需要运行验证时，先列出计划运行的验证命令，询问用户是否需要执行，每次执行前必须先经用户明确同意后才可执行
 
 # File Operations
 - 禁止在当前工作目录以外创建、修改、覆盖任何文件或目录（包括临时文件），如确有需要，每次执行前必须先说明操作内容和路径，经用户明确同意后才可执行

@@ -53,7 +53,7 @@
   },
   "agent": {
     "title": {
-      "model": "qcapi/glm-5.3-flash"
+      "model": "qcapi/deepseek-v4.1-flash"
     },
     "qingchun": {
       "mode": "primary",
@@ -73,6 +73,34 @@
         "baseURL": "https://APIURL/v1"
       },
       "models": {
+        "deepseek-v4.1-flash": {
+          "name": "DeepSeek-V4.1-Flash",
+          "family": "deepseek-v4",
+          "release_date": "2026-09-10",
+          "last_updated": "2026-09-10",
+          "attachment": false,
+          "reasoning": true,
+          "temperature": false,
+          "tool_call": true,
+          "structured_output": true,
+          "open_weights": true,
+          "limit": {
+            "context": 1000000,
+            "output": 384000
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "interleaved": {
+            "field": "reasoning_content"
+          },
+          "cost": {
+            "input": 2,
+            "output": 8,
+            "cache_read": 0.04
+          }
+        },
         "glm-5.3-flash": {
           "name": "GLM-5.3-Flash",
           "family": "glm-5",

@@ -52,6 +52,12 @@
     "doom_loop": "ask"
   },
   "agent": {
+    "build": { 
+      "hidden": true
+    },
+    "plan": { 
+      "hidden": true
+    },
     "title": {
       "model": "qcapi/deepseek-v4.1-flash"
     },

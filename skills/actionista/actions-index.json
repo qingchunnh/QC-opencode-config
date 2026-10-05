@@ -1,6 +1,6 @@
 {
   "_metadata": {
-    "generated": "2026-08-17T06:13:34Z",
+    "generated": "2026-10-05T06:29:23Z",
     "generator": "actionista",
     "actionCount": 264,
     "note": "This index is updated daily by .github/workflows/update-index.yml"
@@ -58,15 +58,16 @@
     },
     "AndreasAugustin/actions-template-sync": {
       "latest": "v2",
-      "latestFull": "v2.5.3",
+      "latestFull": "v2.6.0",
       "description": ":octocat: Github action for syncing other repositories (templates) with current repository. Any git ",
       "category": "git-operations",
-      "sha": "8a0f668b83c32a0f673353086d74f12b8853d4f5",
+      "sha": "6e1d0089686f8940604fc15baae62367bf6ee860",
       "inputs": [
         "source_gh_token",
         "target_gh_token",
         "github_token",
         "source_repo_path",
+        "source_branch",
         "upstream_branch",
         "source_repo_ssh_private_key",
         "pr_branch_name_prefix",
@@ -93,7 +94,9 @@
         "gpg_passphrase",
         "steps",
         "template_sync_ignore_file_path",
-        "is_with_tags"
+        "is_with_tags",
+        "is_sync_to_latest_semver",
+        "is_include_prerelease"
       ],
       "migrations": {
         "v1→v2": {
@@ -101,11 +104,15 @@
             "added": [
               "source_gh_token",
               "target_gh_token",
+              "source_branch",
+              "pr_assignees",
               "is_keep_branch_on_pr_cleanup",
               "is_git_lfs",
               "steps",
               "template_sync_ignore_file_path",
-              "is_with_tags"
+              "is_with_tags",
+              "is_sync_to_latest_semver",
+              "is_include_prerelease"
             ],
             "removed": []
           }
@@ -156,10 +163,10 @@
     },
     "Apple-Actions/upload-testflight-build": {
       "latest": "v5",
-      "latestFull": "v5.3.0",
+      "latestFull": "v5.5.0",
       "description": "A GitHub Action that Uploads a build to Apple TestFlight",
       "category": "mobile",
-      "sha": "5e75ff58276689011512ba87a381d93dc67dbcf8",
+      "sha": "14df18fee5a4ff3b76971dd382f033494a0194e9",
       "deprecated": [
         "v1",
         "v2",
@@ -180,10 +187,10 @@
     },
     "DeLaGuardo/setup-clojure": {
       "latest": "v13",
-      "latestFull": "13.6.1",
+      "latestFull": "13.7.0",
       "description": "GitHub Action to provision clojure's most popular build tools for Linux, Mac OS X and Windows.",
       "category": "setup-languages",
-      "sha": "4c7a6f613e5089821bb3bb2a33a3ee115578580d",
+      "sha": "6d46099eae24853c33c0482f2bb54edf4f1a4c74",
       "deprecated": [
         "v1",
         "v2",
@@ -245,10 +252,10 @@
     },
     "EndBug/add-and-commit": {
       "latest": "v11",
-      "latestFull": "v11.0.0",
+      "latestFull": "v11.1.1",
       "description": ":octocat: Automatically commit changes made in your workflow run directly to your repo",
       "category": "git-operations",
-      "sha": "645ecc0dd0a57f4d86d26c0aa5fc42c0a856fbca",
+      "sha": "cc9c08ba6c8df3b93a8f2db63e89b98368ae2ae8",
       "deprecated": [
         "v1",
         "v2",
@@ -282,7 +289,19 @@
         "tag_push",
         "allow_unsafe_git_protocols",
         "github_token"
-      ]
+      ],
+      "migrations": {
+        "v10→v11": {
+          "inputChanges": {
+            "added": [
+              "dry_run",
+              "push_attempts",
+              "allow_unsafe_git_protocols"
+            ],
+            "removed": []
+          }
+        }
+      }
     },
     "EndBug/version-check": {
       "latest": "v3",
@@ -479,10 +498,10 @@
     },
     "JetBrains/qodana-action": {
       "latest": "v2026",
-      "latestFull": "v2026.2.0",
+      "latestFull": "v2026.2.2",
       "description": "⚙️ Scan your Go, Java, Kotlin, PHP, Python, JavaScript, TypeScript, .NET projects at GitHub with Qod",
       "category": "linting",
-      "sha": "b588768b6e7e6da579e518bc584f79de0d243692",
+      "sha": "3e8d76ff0e0241618abd808682f426afe84bab3f",
       "deprecated": [
         "v1",
         "v2",
@@ -2511,6 +2530,7 @@
       ],
       "inputs": [
         "args",
+        "env-vars-to-linter",
         "results-dir",
         "cache-dir",
         "use-caches",
@@ -2822,7 +2842,10 @@
         "rust-toolchain",
         "rustup-components",
         "working-directory",
+        "cache",
         "sccache",
+        "kache",
+        "kache-version",
         "before-script-linux"
       ]
     },
@@ -2894,10 +2917,10 @@
     },
     "SonarSource/sonarqube-scan-action": {
       "latest": "v8",
-      "latestFull": "v8.2.1",
+      "latestFull": "v8.3.0",
       "description": "",
       "category": "linting",
-      "sha": "22918119ff8e1ca75a623e15c8296b6ea4fbe28f",
+      "sha": "d209202bc7d53ff1cc128f7f907dac145c9d6ae9",
       "deprecated": [
         "v1",
         "v2",
@@ -2927,10 +2950,10 @@
     },
     "Songmu/tagpr": {
       "latest": "v1",
-      "latestFull": "v1.20.1",
+      "latestFull": "v1.21.1",
       "description": "automatically creates and updates a pull request for unreleased items, tag them when they are merged",
       "category": "release",
-      "sha": "d1b8138b7a31075141b6cd64103de9485ced7ac9",
+      "sha": "967f2ab22be958948fb5bd439bfa3d404dd9dee8",
       "inputs": [
         "version",
         "config"
@@ -3015,10 +3038,10 @@
     },
     "TriPSs/conventional-changelog-action": {
       "latest": "v6",
-      "latestFull": "v6.4.0",
+      "latestFull": "v6.5.0",
       "description": "Github Action that generates a changelog with the Conventional Changelog CLI",
       "category": "release",
-      "sha": "ee43def3241429afddab215ba89090cbf64fb45c",
+      "sha": "469f0e5e35831fbd1962706f29f65daf0a5723f2",
       "deprecated": [
         "v1",
         "v2",
@@ -3108,14 +3131,15 @@
       ]
     },
     "actions-rust-lang/setup-rust-toolchain": {
-      "latest": "v1",
-      "latestFull": "v1.17.0",
+      "latest": "v2",
+      "latestFull": "v2.0.0",
       "description": "Setup a specific Rust toolchain with extra features like problem matchers",
       "category": "setup-languages",
-      "sha": "166cdcfd11aee3cb47222f9ddb555ce30ddb9659",
+      "sha": "ecabd13d1c56bd1345c230e542e9144811ad706f",
       "inputs": [
         "toolchain",
         "target",
+        "build-warnings",
         "components",
         "cache",
         "cache-workspaces",
@@ -3133,7 +3157,17 @@
         "rustflags",
         "override",
         "rust-src-dir"
-      ]
+      ],
+      "migrations": {
+        "v1→v2": {
+          "inputChanges": {
+            "added": [
+              "build-warnings"
+            ],
+            "removed": []
+          }
+        }
+      }
     },
     "actions/add-to-project": {
       "latest": "v2",
@@ -3432,10 +3466,10 @@
     },
     "actions/deploy-pages": {
       "latest": "v5",
-      "latestFull": "v5.0.0",
+      "latestFull": "v5.0.1",
       "description": "GitHub Action to publish artifacts to GitHub Pages for deployments",
       "category": "documentation",
-      "sha": "cd2ce8fcbc39b97be8ca5fce6e763baed58fa128",
+      "sha": "368f82528645a54fb793d4d04e342629a3f51346",
       "deprecated": [
         "v1",
         "v2",
@@ -3559,7 +3593,8 @@
         "cache",
         "cache-dependency-path",
         "workloads",
-        "architecture"
+        "architecture",
+        "check-latest"
       ]
     },
     "actions/setup-go": {
@@ -3587,15 +3622,16 @@
       ]
     },
     "actions/setup-java": {
-      "latest": "v5",
-      "latestFull": "v5.7.0",
+      "latest": "v6",
+      "latestFull": "v6.0.1",
       "description": "Set up your GitHub Actions workflow with a specific version of Java",
       "category": "setup-languages",
-      "sha": "b6effb05e454b25005698d916606bdc6ffcbf961",
+      "sha": "de7274f081f381c8f8158605e0321c36c376e2e6",
       "deprecated": [
         "v1",
         "v2",
-        "v3"
+        "v3",
+        "v4"
       ],
       "inputs": [
         "java-version",
@@ -3615,6 +3651,10 @@
         "server-username",
         "server-password-env-var",
         "server-password",
+        "mvn-server-credentials",
+        "mvn-repositories",
+        "mvn-repositories-include-central",
+        "mvn-repositories-prioritize-central",
         "settings-path",
         "overwrite-settings",
         "gpg-private-key",
@@ -3633,20 +3673,20 @@
         "problem-matcher"
       ],
       "migrations": {
-        "v4→v5": {
+        "v5→v6": {
           "inputChanges": {
             "added": [
-              "jdk-file",
               "force-download",
-              "set-default",
-              "verify-signature",
-              "verify-signature-public-key",
               "server-username-env-var",
               "server-password-env-var",
+              "mvn-server-credentials",
+              "mvn-repositories",
+              "mvn-repositories-include-central",
+              "mvn-repositories-prioritize-central",
               "gpg-passphrase-env-var",
+              "cache-jdk",
               "cache-path",
               "cache-read-only",
-              "show-download-progress",
               "problem-matcher"
             ],
             "removed": []
@@ -3702,6 +3742,8 @@
         "architecture",
         "check-latest",
         "token",
+        "mirror",
+        "mirror-token",
         "cache-dependency-path",
         "update-environment",
         "allow-prereleases",
@@ -3791,6 +3833,7 @@
         "ignore-issue-updates",
         "ignore-pr-updates",
         "include-only-assigned",
+        "exempt-issue-types",
         "only-issue-types"
       ]
     },
@@ -3881,10 +3924,10 @@
     },
     "affaan-m/agentshield": {
       "latest": "v1",
-      "latestFull": "v1.4.0",
+      "latestFull": "v1.6.0",
       "description": "AI agent security scanner. Detect vulnerabilities in agent configurations, MCP servers, and tool per",
       "category": "security",
-      "sha": "9bbc007cf5afb562c324bbad4ce6c544420f49f6",
+      "sha": "b0891303bdcd6037376a94263d45cfd2ff3dfb98",
       "inputs": [
         "path",
         "min-severity",
@@ -3937,10 +3980,10 @@
     },
     "aminya/setup-cpp": {
       "latest": "v1",
-      "latestFull": "v1.8.0",
+      "latestFull": "v1.10.1",
       "description": "Install all the tools required for building and testing C++ and C projects.",
       "category": "setup-languages",
-      "sha": "1f17f92d6a52bfcb1a25348e2c526c2e5cbb1134",
+      "sha": "15a6bd8cf39030f88b5da3d203a829ec4eea4955",
       "inputs": [
         "timeout",
         "cache-tools",
@@ -3976,6 +4019,7 @@
         "ninja",
         "conan",
         "make",
+        "autoreconf",
         "task",
         "vcpkg",
         "meson",
@@ -4101,10 +4145,10 @@
     },
     "anchore/sbom-action": {
       "latest": "v0",
-      "latestFull": "v0.24.0",
+      "latestFull": "v0.24.3",
       "description": "GitHub Action for creating software bill of materials using Syft.",
       "category": "security",
-      "sha": "e22c389904149dbc22b58101806040fa8d37a610",
+      "sha": "66cbf4bc1f1c0d2edc94016e65bc221b6bb0ad6c",
       "inputs": [
         "path",
         "file",
@@ -4125,10 +4169,10 @@
     },
     "anchore/scan-action": {
       "latest": "v7",
-      "latestFull": "v7.4.0",
+      "latestFull": "v7.4.2",
       "description": "Anchore container analysis and scan provided as a GitHub Action",
       "category": "security",
-      "sha": "e1165082ffb1fe366ebaf02d8526e7c4989ea9d2",
+      "sha": "27805bf3b4e84b4a5c980df22ed233c00390a439",
       "deprecated": [
         "v1",
         "v2",
@@ -4165,10 +4209,10 @@
     },
     "anthropics/claude-code-action": {
       "latest": "v1",
-      "latestFull": "v1.0.193",
+      "latestFull": "v1.0.241",
       "description": "",
       "category": "ai-assistants",
-      "sha": "9d7150bc8a3dae8149739a88019d192b579ad90c",
+      "sha": "cab360f6565aa35a51d6ce9e43f1f4287c0a32ea",
       "inputs": [
         "trigger_phrase",
         "assignee_trigger",
@@ -4384,10 +4428,10 @@
     },
     "astral-sh/setup-uv": {
       "latest": "v10",
-      "latestFull": "v10.0.1",
+      "latestFull": "v10.2.0",
       "description": "Set up your GitHub Actions workflow with a specific version of https://docs.astral.sh/uv/",
       "category": "setup-languages",
-      "sha": "20cfd1bf945f4377ade1205e4dbc17946fc9a30d",
+      "sha": "c18668ad3cf93ea998bef934396af7bb5c839dc7",
       "deprecated": [
         "v1",
         "v2",
@@ -4429,10 +4473,10 @@
     },
     "asyncapi/cli": {
       "latest": "v6",
-      "latestFull": "v6.0.2",
+      "latestFull": "v6.2.0",
       "description": "CLI to work with your AsyncAPI files. You can validate them and in the future use a generator and ev",
       "category": "utilities",
-      "sha": "fb73ff3a429c1bc6a14c1b89f12601288677b9fa",
+      "sha": "63df7607f902aba80e2ef4d88a5605821f49ec58",
       "deprecated": [
         "v1",
         "v2",
@@ -4480,10 +4524,10 @@
     },
     "aws-actions/amazon-ecr-login": {
       "latest": "v2",
-      "latestFull": "v2.1.6",
+      "latestFull": "v2.1.7",
       "description": "Logs into Amazon ECR with the local Docker client.",
       "category": "cloud-aws",
-      "sha": "d539f0932e70871a027e9d5a9d8fc38589180a64",
+      "sha": "03f1aad4c6c7ffd436567f42f9384779290529bd",
       "inputs": [
         "http-proxy",
         "mask-password",
@@ -4701,10 +4745,10 @@
     },
     "aws-actions/aws-secretsmanager-get-secrets": {
       "latest": "v3",
-      "latestFull": "v3.0.1",
+      "latestFull": "v3.0.2",
       "description": "",
       "category": "cloud-aws",
-      "sha": "2cb1a461cbd4865ac4299648312e4704c646cd53",
+      "sha": "2297f9a879480a9e3af9b293ed15c70caf8e1c88",
       "deprecated": [
         "v1"
       ],
@@ -4717,10 +4761,10 @@
     },
     "aws-actions/configure-aws-credentials": {
       "latest": "v6",
-      "latestFull": "v6.2.3",
+      "latestFull": "v6.3.0",
       "description": "Configure AWS credential environment variables for use in other GitHub Actions.",
       "category": "cloud-aws",
-      "sha": "e6de054238d6b7531b4efff3b6587d9aade6a06c",
+      "sha": "e1253824e5c10ff9df46874f81ed3ec929e19cfd",
       "deprecated": [
         "v1",
         "v2",
@@ -4759,7 +4803,8 @@
         "force-skip-oidc",
         "action-timeout-s",
         "custom-tags",
-        "sts-endpoint"
+        "sts-endpoint",
+        "translate-env-variables"
       ],
       "migrations": {
         "v5→v6": {
@@ -4769,7 +4814,8 @@
               "overwrite-aws-profile",
               "transitive-tag-keys",
               "custom-tags",
-              "sts-endpoint"
+              "sts-endpoint",
+              "translate-env-variables"
             ],
             "removed": []
           }
@@ -4778,10 +4824,10 @@
     },
     "azure/aks-set-context": {
       "latest": "v5",
-      "latestFull": "v5.0.0",
+      "latestFull": "v5.0.1",
       "description": "GitHub Action for setting context (retrieving Kubeconfig) before interacting with Kubernetes cluster",
       "category": "kubernetes",
-      "sha": "60623acbdcbbdcf799ad50a1adf8703874339f8b",
+      "sha": "883bdc8d8d1d0fd87e66cc4ba6f0b618f9eb5281",
       "deprecated": [
         "v1",
         "v2",
@@ -4844,10 +4890,10 @@
     },
     "azure/k8s-deploy": {
       "latest": "v7",
-      "latestFull": "v7.0.0",
+      "latestFull": "v7.0.1",
       "description": "GitHub Action for deploying to Kubernetes clusters",
       "category": "kubernetes",
-      "sha": "51ca02a8b7225fbd0924aac359c5b336a5f1e5b4",
+      "sha": "bf1ec05e1d736ac4ac70bae889d3ec48c79e2213",
       "deprecated": [
         "v1",
         "v2",
@@ -4884,10 +4930,10 @@
     },
     "azure/login": {
       "latest": "v3",
-      "latestFull": "v3.0.1",
+      "latestFull": "v3.1.0",
       "description": "Connect to Azure",
       "category": "cloud-azure",
-      "sha": "f5d393ae46f8fde4be8b75f32e3fc50e654ad0ca",
+      "sha": "a641126d1b8aa4d1fa005f4f92df94a3a4c4c906",
       "deprecated": [
         "v1"
       ],
@@ -4900,8 +4946,21 @@
         "environment",
         "allow-no-subscriptions",
         "audience",
-        "auth-type"
-      ]
+        "auth-type",
+        "max-context-population",
+        "mask-client-id"
+      ],
+      "migrations": {
+        "v2→v3": {
+          "inputChanges": {
+            "added": [
+              "max-context-population",
+              "mask-client-id"
+            ],
+            "removed": []
+          }
+        }
+      }
     },
     "azure/webapps-deploy": {
       "latest": "v3",
@@ -4987,20 +5046,20 @@
     },
     "bencherdev/bencher": {
       "latest": "v0",
-      "latestFull": "v0.6.11",
+      "latestFull": "v0.6.13",
       "description": "🐰 Bencher - Continuous Benchmarking",
       "category": "testing",
-      "sha": "4c83b25441d145ee273adaf74be30f2382e6ba85",
+      "sha": "f80847436d7157936b40525db4c2a1064124f04a",
       "inputs": [
         "version"
       ]
     },
     "benchmark-action/github-action-benchmark": {
       "latest": "v1",
-      "latestFull": "v1.22.1",
+      "latestFull": "v1.22.2",
       "description": "GitHub Action for continuous benchmarking to keep performance",
       "category": "testing",
-      "sha": "52576c92bccf6ac60c8223ec7eb2565637cae9ba",
+      "sha": "4322e5726e6334590d251fc4f92bec0efafc45dc",
       "inputs": [
         "name",
         "tool",
@@ -5203,7 +5262,7 @@
       "latestFull": "v17",
       "description": "Build software only once and put it in a global cache",
       "category": "package-managers",
-      "sha": "5f2d7c5294214f71b873db4b969586b980625e71",
+      "sha": "38b082610b782e7e93e209c35fd730d399dee866",
       "deprecated": [
         "v1",
         "v2",
@@ -5253,20 +5312,20 @@
     },
     "cargo-bins/cargo-binstall": {
       "latest": "v1",
-      "latestFull": "v1.21.1",
+      "latestFull": "v1.25.1",
       "description": "Binary installation for rust projects",
       "category": "build-tools",
-      "sha": "e00d2c94cc0067b77737821097a62d91c0301baa",
+      "sha": "7bebc2e59eb8820162b7ac8f62a92bfdb2732447",
       "inputs": [
         "version"
       ]
     },
     "changesets/action": {
       "latest": "v2",
-      "latestFull": "v2.1.0",
+      "latestFull": "v2.1.2",
       "description": "",
       "category": "release",
-      "sha": "198f833dd7d863100ea6e28967bc9a9fdefadb0a",
+      "sha": "ae32849d5ba541f9ae29e40e22a623bc13562f51",
       "inputs": [
         "github-token",
         "publish-script",
@@ -5389,12 +5448,21 @@
       ]
     },
     "cirolini/genai-code-review": {
-      "latest": "v2",
-      "latestFull": "v2",
-      "description": "",
+      "latest": "v3",
+      "latestFull": "v3.0.1",
+      "description": "GitHub Action that reviews pull request diffs with an LLM and posts the comments on the PR",
       "category": "ai-assistants",
-      "sha": "c316e1db847ecbcb530c5fb66c102fb8a3454a4d",
+      "sha": "0b32576a38eca3a0dde5655830fb6307efaa85c5",
+      "deprecated": [
+        "v1"
+      ],
       "inputs": [
+        "provider",
+        "model",
+        "api_key",
+        "base_url",
+        "temperature",
+        "max_tokens",
         "openai_api_key",
         "github_token",
         "github_pr_id",
@@ -5403,18 +5471,34 @@
         "openai_max_tokens",
         "mode",
         "language",
+        "max_comments",
+        "min_severity",
+        "min_confidence",
+        "ignore_paths",
+        "incremental",
+        "panel",
+        "config_path",
+        "runlog_path",
         "custom_prompt"
       ],
       "migrations": {
-        "v1→v2": {
+        "v2→v3": {
           "inputChanges": {
             "added": [
-              "openai_model",
-              "openai_temperature",
-              "openai_max_tokens",
-              "mode",
-              "language",
-              "custom_prompt"
+              "provider",
+              "model",
+              "api_key",
+              "base_url",
+              "temperature",
+              "max_tokens",
+              "max_comments",
+              "min_severity",
+              "min_confidence",
+              "ignore_paths",
+              "incremental",
+              "panel",
+              "config_path",
+              "runlog_path"
             ],
             "removed": []
           }
@@ -5450,10 +5534,10 @@
     },
     "cloudflare/wrangler-action": {
       "latest": "v4",
-      "latestFull": "v4.0.0",
+      "latestFull": "v4.1.3",
       "description": "🧙‍♀️ easily deploy cloudflare workers applications using wrangler and github actions",
       "category": "infrastructure",
-      "sha": "ebbaa1584979971c8614a24965b4405ff95890e0",
+      "sha": "953926a2e2182532811c01a25e53647d93bf07c0",
       "deprecated": [
         "v1",
         "v2"
@@ -5476,10 +5560,10 @@
     },
     "codecov/codecov-action": {
       "latest": "v7",
-      "latestFull": "v7.0.0",
+      "latestFull": "v7.1.1",
       "description": "GitHub Action that uploads coverage to Codecov :open_umbrella: ",
       "category": "testing",
-      "sha": "fb8b3582c8e4def4969c97caa2f19720cb33a72f",
+      "sha": "303a32d7a59b442fa8d48b6a1cc6825c09c847a5",
       "deprecated": [
         "v1",
         "v2",
@@ -5490,6 +5574,7 @@
       "inputs": [
         "base_sha",
         "binary",
+        "cleanup",
         "codecov_yml_path",
         "commit_parent",
         "directory",
@@ -5537,7 +5622,17 @@
         "verbose",
         "version",
         "working-directory"
-      ]
+      ],
+      "migrations": {
+        "v6→v7": {
+          "inputChanges": {
+            "added": [
+              "cleanup"
+            ],
+            "removed": []
+          }
+        }
+      }
     },
     "coderabbitai/ai-pr-reviewer": {
       "latest": "v1",
@@ -5587,10 +5682,10 @@
     },
     "conda-incubator/setup-miniconda": {
       "latest": "v4",
-      "latestFull": "v4.0.1",
+      "latestFull": "v4.1.0",
       "description": "Set up your GitHub Actions workflow with conda via miniconda",
       "category": "package-managers",
-      "sha": "8ee1f361103df19b6f8c8655fd3967a8ecb162d5",
+      "sha": "be893c923ea9cf1cf7cd510fbdde27c7e18cbdcb",
       "deprecated": [
         "v1",
         "v2"
@@ -5666,10 +5761,10 @@
     },
     "coursier/setup-action": {
       "latest": "v3",
-      "latestFull": "v3.0.2",
+      "latestFull": "v3.0.4",
       "description": "▶️ GitHub Action using Coursier to install JVM and Scala tools",
       "category": "setup-languages",
-      "sha": "9b7939bf01fd1185ce2babe16135168361bf2c62",
+      "sha": "648df969f41ef15fda2baba8b37f9fa3d16390a3",
       "deprecated": [
         "v1"
       ],
@@ -5752,10 +5847,10 @@
     },
     "cpp-linter/cpp-linter-action": {
       "latest": "v2",
-      "latestFull": "v2.21.0",
+      "latestFull": "v2.23.1",
       "description": "A Github Action for linting C/C++ code integrating clang-tidy and clang-format to collect feedback p",
       "category": "linting",
-      "sha": "cab1143a2c149bc41e85b070a9de81716974c18f",
+      "sha": "8120e05c7fbd25fa09fa93424ec49f55f7b304ab",
       "inputs": [
         "style",
         "extensions",
@@ -5777,6 +5872,10 @@
         "tidy-review",
         "format-review",
         "passive-reviews",
+        "auto-fix",
+        "auto-fix-commit-msg",
+        "auto-fix-git-user",
+        "auto-fix-git-email",
         "jobs",
         "cache-enable",
         "summary-output-file"
@@ -5793,6 +5892,10 @@
               "tidy-review",
               "format-review",
               "passive-reviews",
+              "auto-fix",
+              "auto-fix-commit-msg",
+              "auto-fix-git-user",
+              "auto-fix-git-email",
               "jobs",
               "cache-enable",
               "summary-output-file"
@@ -5830,10 +5933,10 @@
     },
     "cypress-io/github-action": {
       "latest": "v7",
-      "latestFull": "v7.4.2",
+      "latestFull": "v7.4.6",
       "description": "GitHub Action for running Cypress end-to-end & component tests",
       "category": "testing",
-      "sha": "c32f12761482a282d24ca0fd7466d8ae86f54ba8",
+      "sha": "c541a95ea92d9239347a2355f2e895cd4b3f8060",
       "deprecated": [
         "v1",
         "v2",
@@ -5888,10 +5991,10 @@
     },
     "davelosert/vitest-coverage-report-action": {
       "latest": "v2",
-      "latestFull": "v2.12.2",
+      "latestFull": "v2.13.0",
       "description": "A GitHub Action to report vitest test coverage results",
       "category": "testing",
-      "sha": "8b157684c6a6b259b97d45e72b44242865c0f6a5",
+      "sha": "c4bbc33a89b7ace0e63d35f1f7d4bcee31155a73",
       "inputs": [
         "github-token",
         "vite-config-path",
@@ -5932,11 +6035,11 @@
       }
     },
     "dawidd6/action-download-artifact": {
-      "latest": "v23",
-      "latestFull": "v23",
+      "latest": "v27",
+      "latestFull": "v27",
       "description": ":gear: GitHub Action for downloading artifacts associated with given criteria",
       "category": "utilities",
-      "sha": "57aa996fc1713cc1579039614f4645a7f4841fd4",
+      "sha": "eab87c9830c39eff17e5a6eadb20bfb4bc880477",
       "deprecated": [
         "v1",
         "v2",
@@ -5958,7 +6061,11 @@
         "v18",
         "v19",
         "v20",
-        "v21"
+        "v21",
+        "v22",
+        "v23",
+        "v24",
+        "v25"
       ],
       "inputs": [
         "github_token",
@@ -5987,11 +6094,11 @@
       ]
     },
     "dawidd6/action-send-mail": {
-      "latest": "v18",
-      "latestFull": "v18",
+      "latest": "v22",
+      "latestFull": "v22",
       "description": ":gear: GitHub Action for sending emails",
       "category": "notifications",
-      "sha": "94de994a9f6fffee200243214e17002e2920bb59",
+      "sha": "67ce3558d613188179559c61d3565140cf389968",
       "deprecated": [
         "v1",
         "v2",
@@ -6008,13 +6115,18 @@
         "v13",
         "v14",
         "v15",
-        "v16"
+        "v16",
+        "v17",
+        "v18",
+        "v19",
+        "v20"
       ],
       "inputs": [
         "connection_url",
         "server_address",
         "server_port",
         "secure",
+        "require_tls",
         "username",
         "password",
         "subject",
@@ -6078,10 +6190,10 @@
     },
     "docker/bake-action": {
       "latest": "v7",
-      "latestFull": "v7.3.0",
+      "latestFull": "v7.4.0",
       "description": "GitHub Action to use Docker Buildx Bake as a high-level build command",
       "category": "docker",
-      "sha": "d3418bd7d0e9324001bca92fa8ba175ea7e6dc9b",
+      "sha": "018cb6412ab401ebaa809aa5f85966b74628600f",
       "deprecated": [
         "v1",
         "v2",
@@ -6121,10 +6233,10 @@
     },
     "docker/build-push-action": {
       "latest": "v7",
-      "latestFull": "v7.3.0",
+      "latestFull": "v7.4.0",
       "description": "GitHub Action to build and push Docker images with Buildx",
       "category": "docker",
-      "sha": "53b7df96c91f9c12dcc8a07bcb9ccacbed38856a",
+      "sha": "c3c9e263c25d99ce0380d002d59b67737d91b0dc",
       "deprecated": [
         "v1",
         "v2",
@@ -6216,10 +6328,10 @@
     },
     "docker/setup-buildx-action": {
       "latest": "v4",
-      "latestFull": "v4.2.0",
+      "latestFull": "v4.4.1",
       "description": "GitHub Action to set up Docker Buildx",
       "category": "docker",
-      "sha": "bb05f3f5519dd87d3ba754cc423b652a5edd6d2c",
+      "sha": "f87e5991a6d7451dcb8d9637bfbc97413f497069",
       "deprecated": [
         "v1",
         "v2"
@@ -6255,10 +6367,10 @@
     },
     "docker/setup-qemu-action": {
       "latest": "v4",
-      "latestFull": "v4.2.0",
+      "latestFull": "v4.4.0",
       "description": "GitHub Action to install QEMU static binaries",
       "category": "docker",
-      "sha": "96fe6ef7f33517b61c61be40b68a1882f3264fb8",
+      "sha": "99012661954931238ded8c8b007157a8430204e1",
       "deprecated": [
         "v1",
         "v2"
@@ -6346,7 +6458,7 @@
       "latestFull": "v1",
       "description": "Concise GitHub Action for installing a Rust toolchain",
       "category": "setup-languages",
-      "sha": "6c977a6ca4077a0ceb28ffbe03f59d46e9ac8772",
+      "sha": "7e38f4b43b4db5c8dd498af069a4f6196df1d067",
       "inputs": [
         "toolchain",
         "targets",
@@ -6452,10 +6564,10 @@
     },
     "fwilhe2/setup-kotlin": {
       "latest": "v2",
-      "latestFull": "v2.0",
+      "latestFull": "v2.1",
       "description": "Setup the Kotlin™ cli compiler in GitHub Actions",
       "category": "setup-languages",
-      "sha": "ee9692514da313706b193d808526812102a344e4",
+      "sha": "b325539ca8f6e1d9ee04efed06f49bdbf5426dbb",
       "inputs": [
         "version",
         "install-native",
@@ -6508,7 +6620,7 @@
     "getsentry/action-github-app-token": {
       "latest": "v4",
       "latestFull": "v4.0.0",
-      "description": "Gets a GitHub auth token for a GitHub App installation",
+      "description": "deprecated; use actions/create-github-app-token instead",
       "category": "utilities",
       "sha": "5c1e90706fe007857338ac1bfbd7a4177db2f789",
       "deprecated": [
@@ -6570,10 +6682,10 @@
     },
     "github/branch-deploy": {
       "latest": "v12",
-      "latestFull": "v12.0.0",
+      "latestFull": "v12.0.1",
       "description": "Enabling Branch Deployments through IssueOps with GitHub Actions - If you find this project useful, ",
       "category": "infrastructure",
-      "sha": "f0984057ffe1aa340aa017b6eafb894310aed88e",
+      "sha": "97edad089bbbe0c0ad13db7bf9ac085eaa47e255",
       "deprecated": [
         "v1",
         "v2",
@@ -6633,6 +6745,7 @@
         "skip_successful_noop_labels_if_approved",
         "skip_successful_deploy_labels_if_approved",
         "enforced_deployment_order",
+        "deployment_order_scope",
         "use_security_warnings",
         "allow_non_default_target_branch_deployments",
         "deployment_confirmation",
@@ -6642,7 +6755,8 @@
         "v11→v12": {
           "inputChanges": {
             "added": [
-              "disable_lock"
+              "disable_lock",
+              "deployment_order_scope"
             ],
             "removed": []
           }
@@ -6651,10 +6765,10 @@
     },
     "github/codeql-action/analyze": {
       "latest": "v4",
-      "latestFull": "v4.37.7",
+      "latestFull": "v4.38.2",
       "description": "Actions for running CodeQL analysis",
       "category": "security",
-      "sha": "ff2f1c621b7f889edc0d3c761ac2e6a3f8cdb0dd",
+      "sha": "2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2",
       "deprecated": [
         "v1",
         "v2"
@@ -6662,10 +6776,10 @@
     },
     "github/codeql-action/autobuild": {
       "latest": "v4",
-      "latestFull": "v4.37.7",
+      "latestFull": "v4.38.2",
       "description": "Actions for running CodeQL analysis",
       "category": "security",
-      "sha": "ff2f1c621b7f889edc0d3c761ac2e6a3f8cdb0dd",
+      "sha": "2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2",
       "deprecated": [
         "v1",
         "v2"
@@ -6673,10 +6787,10 @@
     },
     "github/codeql-action/init": {
       "latest": "v4",
-      "latestFull": "v4.37.7",
+      "latestFull": "v4.38.2",
       "description": "Actions for running CodeQL analysis",
       "category": "security",
-      "sha": "ff2f1c621b7f889edc0d3c761ac2e6a3f8cdb0dd",
+      "sha": "2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2",
       "deprecated": [
         "v1",
         "v2"
@@ -7042,10 +7156,10 @@
     },
     "graalvm/setup-graalvm": {
       "latest": "v1",
-      "latestFull": "v1.6.4",
+      "latestFull": "v1.6.7",
       "description": "Set up your GitHub Actions workflow with a specific GraalVM distribution.",
       "category": "setup-languages",
-      "sha": "5298d94fb55a4f185c602eeac5de1b553882abe2",
+      "sha": "27b360dbb857524eaf0b4c4cef364d38e5b4f173",
       "inputs": [
         "java-version",
         "java-package",
@@ -7066,10 +7180,10 @@
     },
     "gradle/actions/setup-gradle": {
       "latest": "v6",
-      "latestFull": "v6.3.0",
+      "latestFull": "v6.4.0",
       "description": "A collection of GitHub Actions to accelerate your Gradle Builds on GitHub",
       "category": "build-tools",
-      "sha": "9c971963bec38e04b3d30dcc455b5382be2fdbfb",
+      "sha": "3f5f9adaf7d9fecd50b5935e54106014257a94e6",
       "deprecated": [
         "v1",
         "v2",
@@ -7140,10 +7254,10 @@
     },
     "haskell-actions/setup": {
       "latest": "v2",
-      "latestFull": "v2.11.0",
+      "latestFull": "v2.12.1",
       "description": "Setting up GHC, cabal, stack on for Haskell-related CIs",
       "category": "setup-languages",
-      "sha": "cd0d9bdd65b20557f41bea4dbe43d0b5fbbfe553",
+      "sha": "0f8e8c99d88aeb3fbfd523f1ef2c6f762d10d64d",
       "inputs": [
         "ghc-version",
         "cabal-version",
@@ -7173,17 +7287,21 @@
         "skip_upload",
         "mark_as_latest",
         "packages_with_index",
-        "pages_branch"
+        "pages_branch",
+        "oci_registry_url",
+        "oci_username",
+        "oci_password"
       ]
     },
     "helm/kind-action": {
       "latest": "v1",
-      "latestFull": "v1.14.0",
+      "latestFull": "v1.15.0",
       "description": "A GitHub Action for Kubernetes IN Docker - local clusters for testing Kubernetes",
       "category": "kubernetes",
-      "sha": "ef37e7f390d99f746eb8b610417061a60e82a6cc",
+      "sha": "06c1ae10762d3b9c1644e7fe69596ae519e015a2",
       "inputs": [
         "version",
+        "version_file",
         "config",
         "kubeconfig",
         "node_image",
@@ -7203,10 +7321,10 @@
     },
     "hendrikmuhs/ccache-action": {
       "latest": "v1",
-      "latestFull": "v1.2.23",
+      "latestFull": "v1.2.24",
       "description": "github action to speedup building using ccache",
       "category": "build-tools",
-      "sha": "d62db5f07c26379fc4b4e0916f098a92573c3b03",
+      "sha": "f09c25b45002a07be2955cbe52e8cee55643f89d",
       "inputs": [
         "key",
         "restore-keys",
@@ -7609,18 +7727,43 @@
       ]
     },
     "mathieudutour/github-tag-action": {
-      "latest": "v6",
-      "latestFull": "v6.2",
+      "latest": "v7",
+      "latestFull": "v7",
       "description": "A Github Action to automatically bump and tag master, on merge, with the latest SemVer formatted ver",
       "category": "utilities",
-      "sha": "a22cf08638b34d5badda920f9daf6e72c477b07b",
+      "sha": "af99e60ce8132224b8e6ebab5023449fe256ed46",
       "deprecated": [
         "v1",
         "v2",
         "v3",
-        "v4"
+        "v4",
+        "v5"
       ],
       "inputs": [
+        "previous_version",
+        "commit_analyzer_preset",
+        "preset_config",
+        "path_filter",
+        "scopes",
+        "ignore_keywords",
+        "parse_squash_commits",
+        "tag_search_pattern",
+        "prefix_match_tag",
+        "force_bump",
+        "force_prerelease_bump",
+        "default_draft_bump",
+        "previous_tag",
+        "initial_version",
+        "custom_tag_prerelease",
+        "force_update",
+        "rolling_tags",
+        "push",
+        "create_local_tag",
+        "working_directory",
+        "repository",
+        "repository_url",
+        "ref",
+        "soft_fail",
         "github_token",
         "default_bump",
         "default_prerelease_bump",
@@ -7634,20 +7777,7 @@
         "create_annotated_tag",
         "fetch_all_tags",
         "dry_run"
-      ],
-      "migrations": {
-        "v5→v6": {
-          "inputChanges": {
-            "added": [
-              "default_prerelease_bump",
-              "custom_release_rules",
-              "commit_sha",
-              "fetch_all_tags"
-            ],
-            "removed": []
-          }
-        }
-      }
+      ]
     },
     "mattzcarey/shippie": {
       "latest": "v0",
@@ -7703,10 +7833,10 @@
     },
     "mikefarah/yq": {
       "latest": "v4",
-      "latestFull": "v4.53.3",
+      "latestFull": "v4.54.1",
       "description": "yq is a portable command-line YAML, JSON, XML, CSV, TOML, HCL  and properties processor",
       "category": "utilities",
-      "sha": "1b9b4ac5187171d2e5e3129be0cfa827c7f9d53d",
+      "sha": "504fc38780cc46be8444ea1b72fb55919fc0bfb0",
       "deprecated": [
         "v1",
         "v2"
@@ -7717,10 +7847,10 @@
     },
     "mikepenz/action-junit-report": {
       "latest": "v6",
-      "latestFull": "v6.4.2",
+      "latestFull": "v6.5.0",
       "description": "Reports junit test results as GitHub Pull Request Check",
       "category": "testing",
-      "sha": "d9f48fc87bc235f7e214acf696ca5abc0a986f16",
+      "sha": "a9170d5795813c01ab4901ffb045b52bab4ab09d",
       "deprecated": [
         "v1",
         "v2",
@@ -8024,10 +8154,10 @@
     },
     "ocaml/setup-ocaml": {
       "latest": "v3",
-      "latestFull": "v3.7.1",
+      "latestFull": "v3.9.0",
       "description": "GitHub Action for the OCaml programming language",
       "category": "setup-languages",
-      "sha": "605a7e998e76e035b82c14d618a6e1010732c4ce",
+      "sha": "93303b622b2522e4411e295f9e77411a24912ac7",
       "deprecated": [
         "v1"
       ],
@@ -8037,6 +8167,7 @@
         "opam-pin",
         "opam-local-packages",
         "opam-disable-sandboxing",
+        "cache",
         "dune-cache",
         "cache-prefix",
         "windows-compiler",
@@ -8048,6 +8179,7 @@
         "v2→v3": {
           "inputChanges": {
             "added": [
+              "cache",
               "windows-compiler",
               "windows-environment"
             ],
@@ -8110,10 +8242,10 @@
     },
     "oxsecurity/megalinter": {
       "latest": "v10",
-      "latestFull": "v10.0.0",
+      "latestFull": "v10.1.0",
       "description": "🦙 MegaLinter analyzes 50 languages, 22 formats, 21 tooling formats, excessive copy-pastes, spelling ",
       "category": "linting",
-      "sha": "15e5b45552097e318c93de385779ce3b1084052c",
+      "sha": "9949bad031045f366be2467e00e8371a7328a2e2",
       "deprecated": [
         "v1",
         "v2",
@@ -8517,10 +8649,10 @@
     },
     "pnpm/action-setup": {
       "latest": "v6",
-      "latestFull": "v6.0.10",
+      "latestFull": "v6.1.0",
       "description": "Install pnpm package manager",
       "category": "package-managers",
-      "sha": "0977fd99725f1db4007ccb2928dbb4e90d06cc86",
+      "sha": "ea17c68df8912ef543352723c149a84f56e3d413",
       "deprecated": [
         "v1",
         "v2",
@@ -8669,10 +8801,10 @@
     },
     "pypa/cibuildwheel": {
       "latest": "v4",
-      "latestFull": "v4.2.0",
+      "latestFull": "v4.2.1",
       "description": "🎡 Build Python wheels for all the platforms with minimal configuration. ",
       "category": "build-tools",
-      "sha": "1828c10ab37f080699c7b81cea34097c684a7074",
+      "sha": "e090b81e30c4d855ea63bf4b6e59204c09a101ae",
       "deprecated": [
         "v1",
         "v2"
@@ -8682,7 +8814,8 @@
         "output-dir",
         "config-file",
         "only",
-        "extras"
+        "extras",
+        "python-path"
       ]
     },
     "pypa/gh-action-pip-audit": {
@@ -8754,10 +8887,10 @@
     },
     "release-drafter/release-drafter": {
       "latest": "v7",
-      "latestFull": "v7.7.0",
+      "latestFull": "v7.9.0",
       "description": "Drafts your next release notes as pull requests are merged into master. ",
       "category": "release",
-      "sha": "34d80673e067bdc0c24568d3af899c216adcfaa9",
+      "sha": "72967cdc98ddd3160f1fc3dff619de365e137dd0",
       "deprecated": [
         "v1",
         "v2",
@@ -8771,6 +8904,7 @@
         "name",
         "tag",
         "version",
+        "from",
         "publish",
         "latest",
         "prerelease",
@@ -8787,6 +8921,7 @@
           "inputChanges": {
             "added": [
               "token",
+              "from",
               "dry-run",
               "filter-by-range"
             ],
@@ -8801,10 +8936,10 @@
     },
     "release-plz/action": {
       "latest": "v0",
-      "latestFull": "v0.5.131",
+      "latestFull": "v0.5.139",
       "description": "GitHub action for https://github.com/release-plz/release-plz",
       "category": "release",
-      "sha": "2eb1d8bcb770b4c48ccfaad919734b38b51958c9",
+      "sha": "b8d6b54b02889ff2ae2bb82e8b57c3a8fc1683a5",
       "inputs": [
         "command",
         "registry",
@@ -8821,10 +8956,10 @@
     },
     "reviewdog/action-brakeman": {
       "latest": "v2",
-      "latestFull": "v2.19.2",
+      "latestFull": "v2.20.0",
       "description": "Run brakeman with reviewdog 🐶",
       "category": "linting",
-      "sha": "5083efd49634e26645a0736681b618ccc3fb7f14",
+      "sha": "3ca1f826ac652d188845fe8faa3a1423afb904b6",
       "inputs": [
         "github_token",
         "brakeman_version",
@@ -8856,10 +8991,10 @@
     },
     "reviewdog/action-eslint": {
       "latest": "v1",
-      "latestFull": "v1.34.0",
+      "latestFull": "v1.36.1",
       "description": "Run eslint with reviewdog",
       "category": "linting",
-      "sha": "556a3fdaf8b4201d4d74d406013386aa4f7dab96",
+      "sha": "3ee2a450da17e060b9dfa4bffd53976906c6b2b0",
       "inputs": [
         "github_token",
         "level",
@@ -8877,10 +9012,10 @@
     },
     "reviewdog/action-golangci-lint": {
       "latest": "v2",
-      "latestFull": "v2.10.0",
+      "latestFull": "v2.10.2",
       "description": "Run golangci-lint with reviewdog",
       "category": "linting",
-      "sha": "c76cceaaab89abe74e649d2e34c6c9adc26662d2",
+      "sha": "284129a3ac23bc5d8ac1522e0b6511df74a8836d",
       "inputs": [
         "github_token",
         "golangci_lint_flags",
@@ -8951,10 +9086,10 @@
     },
     "reviewdog/action-shellcheck": {
       "latest": "v1",
-      "latestFull": "v1.32.1",
+      "latestFull": "v1.34.1",
       "description": "Run shellcheck with reviewdog",
       "category": "linting",
-      "sha": "0722bbdb0d47f04c1b53b8734d2422ac63a45ec6",
+      "sha": "d0b8d5fd7fad6afdb6e1b6ce1778892be4d1f427",
       "inputs": [
         "github_token",
         "level",
@@ -8979,10 +9114,10 @@
     },
     "ruby/setup-ruby": {
       "latest": "v1",
-      "latestFull": "v1.321.0",
+      "latestFull": "v1.327.0",
       "description": "An action to download a prebuilt Ruby and add it to the PATH in 5 seconds",
       "category": "setup-languages",
-      "sha": "95ef2b042f9d7a56d8268cba8559e2842e2ad01b",
+      "sha": "14594264cd68ce8a2345dd349bc3d138a4ef85c8",
       "inputs": [
         "ruby-version",
         "rubygems",
@@ -8997,10 +9132,10 @@
     },
     "rubygems/release-gem": {
       "latest": "v1",
-      "latestFull": "v1.4.0",
+      "latestFull": "v1.4.1",
       "description": "The official GitHub Action for publishing your gem files to RubyGems.org",
       "category": "release",
-      "sha": "052cc82692552de3ef2b81fd670e41d13cba8092",
+      "sha": "7f9650160c1a4e7989fdc9855807bdbd421d8b6b",
       "inputs": [
         "token",
         "await-release",
@@ -9011,10 +9146,10 @@
     },
     "s4u/setup-maven-action": {
       "latest": "v1",
-      "latestFull": "v1.20.0",
+      "latestFull": "v1.21.0",
       "description": "Complete environment configuration for Maven builds",
       "category": "build-tools",
-      "sha": "ba34de01b7f4ba2ab8e2860df8993a29f4477056",
+      "sha": "4a02cbd99769e46198135c31d5097c94618ba3f5",
       "inputs": [
         "checkout-enabled",
         "checkout-fetch-depth",
@@ -9025,6 +9160,7 @@
         "checkout-repository",
         "checkout-token",
         "checkout-ssh-key",
+        "checkout-lfs",
         "java-version",
         "java-distribution",
         "java-jdkFile",
@@ -9072,10 +9208,10 @@
     },
     "sbt/setup-sbt": {
       "latest": "v1",
-      "latestFull": "v1.5.7",
+      "latestFull": "v1.5.11",
       "description": "setup-sbt installs the official sbt runner",
       "category": "setup-languages",
-      "sha": "8feba82adc7f01ddcf8165b86f778bdb5b82cebc",
+      "sha": "6158cb0903b8ceeae04f830055f3155e1b6a5ad7",
       "inputs": [
         "sbt-runner-version",
         "disk-cache"
@@ -9083,10 +9219,10 @@
     },
     "securego/gosec": {
       "latest": "v2",
-      "latestFull": "v2.28.0",
+      "latestFull": "v2.29.0",
       "description": "Go security checker",
       "category": "security",
-      "sha": "9e75c0576c9878035d4221392108d458abe10fc3",
+      "sha": "deb54465fea23d19a77f037e11e6589021f8501d",
       "inputs": [
         "args"
       ]
@@ -9260,10 +9396,10 @@
     },
     "softprops/action-gh-release": {
       "latest": "v3",
-      "latestFull": "v3.0.2",
+      "latestFull": "v3.0.3",
       "description": "📦 :octocat: GitHub Action for creating GitHub Releases",
       "category": "release",
-      "sha": "3d0d9888cb7fd7b750713d6e236d1fcb99157228",
+      "sha": "efb35369e0ad2afab669f228072c1b0d510eae64",
       "deprecated": [
         "v1"
       ],
@@ -9291,10 +9427,10 @@
     },
     "softprops/turnstyle": {
       "latest": "v3",
-      "latestFull": "v3.3.2",
+      "latestFull": "v3.3.3",
       "description": "🎟️A GitHub Action for serializing workflow runs",
       "category": "utilities",
-      "sha": "afaccda0f3c0136fb7cb4a734b9b96be03599948",
+      "sha": "3805450be63b8c80577dc253e8c17e9132036df4",
       "deprecated": [
         "v1"
       ],
@@ -9392,10 +9528,10 @@
     },
     "step-security/harden-runner": {
       "latest": "v2",
-      "latestFull": "v2.21.0",
+      "latestFull": "v2.21.1",
       "description": "Harden-Runner is a CI/CD security agent that works like an EDR for GitHub Actions runners. It monito",
       "category": "security",
-      "sha": "05e31511f85b41b11d1cf0ef85d0992719546e2c",
+      "sha": "e14015d583714f6e62063499dc959a02595150a1",
       "inputs": [
         "allowed-endpoints",
         "denied-endpoints",
@@ -9524,18 +9660,19 @@
       }
     },
     "super-linter/super-linter": {
-      "latest": "v8",
-      "latestFull": "v8.7.0",
+      "latest": "v9",
+      "latestFull": "v9.0.0",
       "description": "Combination of multiple linters to run as a GitHub Action or standalone",
       "category": "linting",
-      "sha": "4ce20838b8ab83717e78138c5b3a1407148e0918",
+      "sha": "2da136927bd4a73596db63044b504547c62cb854",
       "deprecated": [
         "v1",
         "v2",
         "v3",
         "v4",
         "v5",
-        "v6"
+        "v6",
+        "v7"
       ]
     },
     "swift-actions/setup-swift": {
@@ -9578,10 +9715,10 @@
     },
     "taiki-e/install-action": {
       "latest": "v2",
-      "latestFull": "v2.86.1",
+      "latestFull": "v2.87.24",
       "description": "GitHub Action for installing development tools (mainly from GitHub Releases).",
       "category": "build-tools",
-      "sha": "288e746965032cfcc232e09af2daf5f23c14d780",
+      "sha": "e407f7bafb71fd004bc5c2da3032e5470cbb6ef0",
       "inputs": [
         "tool",
         "checksum",
@@ -9644,10 +9781,10 @@
     },
     "tailscale/github-action": {
       "latest": "v4",
-      "latestFull": "v4.1.3",
+      "latestFull": "v4.2.0",
       "description": "A GitHub Action to connect your workflow to your Tailscale network.",
       "category": "infrastructure",
-      "sha": "780049a30b6ff5c378a9e7b389d15ece7a204888",
+      "sha": "d1b6cd204f8dceda5b3eaad7f1f767be390056cd",
       "deprecated": [
         "v1",
         "v2"
@@ -9675,7 +9812,8 @@
           "inputChanges": {
             "added": [
               "audience",
-              "ping"
+              "ping",
+              "log-mode"
             ],
             "removed": [
               "targets"
@@ -9940,10 +10078,10 @@
     },
     "trufflesecurity/trufflehog": {
       "latest": "v3",
-      "latestFull": "v3.97.0",
+      "latestFull": "v3.97.9",
       "description": "Find, verify, and analyze leaked credentials",
       "category": "security",
-      "sha": "bcfcf73aaf4759d4dadc2783177c245a02792318",
+      "sha": "4dd8831c5f12599465d4d45c3c447b4018a34c85",
       "deprecated": [
         "v1"
       ],
@@ -9958,10 +10096,10 @@
     },
     "unikraft/kraftkit": {
       "latest": "v0",
-      "latestFull": "v0.12.15",
+      "latestFull": "v0.12.16",
       "description": "Build and use highly customized and ultra-lightweight unikernel VMs.",
       "category": "docker",
-      "sha": "3e55f74c57579b4169b3f2271a695b0b8b9966a3",
+      "sha": "b5dd63da1644808ab47dda72963d7cf90935808c",
       "inputs": [
         "after",
         "run",
@@ -10046,10 +10184,10 @@
     },
     "w9jds/firebase-action": {
       "latest": "v15",
-      "latestFull": "v15.27.0",
+      "latestFull": "v15.32.1",
       "description": "GitHub Action for interacting with Firebase",
       "category": "cloud-gcp",
-      "sha": "9ad0d519471afe1de970603de47075637414bfe9",
+      "sha": "35d0fd9b92b2c66dcd13f1b72dacc588e89e7567",
       "deprecated": [
         "v1",
         "v2",
@@ -10136,10 +10274,10 @@
     },
     "withastro/action": {
       "latest": "v6",
-      "latestFull": "v6.1.2",
+      "latestFull": "v6.1.3",
       "description": "A GitHub Action that deploys your Astro project to GitHub Pages",
       "category": "infrastructure",
-      "sha": "e84f40bd8d2caa9e768ec82ad30dd81f0b280853",
+      "sha": "3eafd002e65cc31b4f0eae0bb05450d521562247",
       "deprecated": [
         "v1",
         "v2",
